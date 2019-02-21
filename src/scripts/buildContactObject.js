@@ -1,8 +1,9 @@
-const buildContactObject = (contactNameParam, contactEmailParam, contactPhoneParam) => {
+const buildContactObject = (contactNameParam, contactEmailParam, contactPhoneParam, userIdParam) => {
     return {
         name: contactNameParam,
         email: contactEmailParam,
-        phone: contactPhoneParam
+        phone: contactPhoneParam,
+        userId: userIdParam
       };
 }
 export default buildContactObject

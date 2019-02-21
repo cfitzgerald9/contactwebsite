@@ -4,8 +4,8 @@ import printAllContacts from "./contactList";
 
 const apiManager = {
     //gets all contacts from api
-    getAllContacts: () => {
-        return fetch("http://localhost:8088/contacts")
+    getAllContacts: (userId) => {
+        return fetch(`http://localhost:8088/contacts/?userId=${userId}`)
             .then(contacts => contacts.json())
     },
     //posts new contact to the api
@@ -23,16 +23,16 @@ const apiManager = {
     },
     //edits contact
     editContact: (idParam, contactToEdit) => {
-       return fetch(`http://localhost:8088/contacts/${idParam}`, {
+        return fetch(`http://localhost:8088/contacts/${idParam}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(contactToEdit)
         })
-        .then(() => {
-            printAllContacts()
-        })
+            .then(() => {
+                printAllContacts()
+            })
     },
     //deletes contact
     deleteContact: (idToDelete) => {
@@ -43,9 +43,27 @@ const apiManager = {
                 printAllContacts()
             })
     },
+    //gets a single contact
     getOneContact: (contactId) => {
-       return fetch(`http://localhost:8088/contacts/${contactId}`)
+        return fetch(`http://localhost:8088/contacts/${contactId}`)
             .then(contact => contact.json())
+    },
+    //retrieves a user
+    getUserByUserName: (userName) => {
+        return fetch(`http://localhost:8088/users?username=${userName}`)
+            .then(user => user.json())
+    },
+    //adds a user
+    addNewUser: (userObject) => {
+        return fetch("http://localhost:8088/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userObject)
+        })
+        .then(response => response.json())
     }
 }
+
 export default apiManager;

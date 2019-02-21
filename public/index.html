@@ -8,12 +8,26 @@
   </head>
   <body>
     <h1>Contact List</h1>
-    <form>
-      <input type="text" placeholder="username" id="usernameInput"> <input type="password" name="password" id="passwordInput" placeholder="password">
-    </form>
-    <button id="loginButton" type="submit">Log-in</button> <button id="logoutButton">Log-out</button>
     <br>
+    <h3>Register!</h3>
+    <form>
+      <input type="text" placeholder="Your username" id="registerUsername">
+      <input type="password" name="password" id="registerPassword" placeholder="Your password">
+      <input type ="text" name="name" id="registerName" placeholder="Your name">
+      <input type ="text" name="email" id="registerEmail" placeholder = "Your email">
+      <input type ="text" name="phone" id="registerPhone" placeholder="Your phone number">
+    </form>
     <button id="registerButton">Register</button>
+    <br>
+    <h3>Login!</h3>
+    <div id = "loginInputs">
+      <input type="text" placeholder="Your username" id="usernameLogin">
+      <input type="password" name="password" id="passwordLogin" placeholder="Your password">
+    </div>
+    <button id="loginButton" type="submit">Log-in</button>
+    <button id="logoutButton">Log-out</button>
+    <br>
+
     <hr>
     <div id = "contactForm">
       <h2>Make a new contact!</h2>
