@@ -8,12 +8,20 @@
   </head>
   <body>
     <h1>Contact List</h1>
+    <form>
+      <input type="text" placeholder="username" id="usernameInput"> <input type="password" name="password" id="passwordInput" placeholder="password">
+    </form>
+    <button id="loginButton" type="submit">Log-in</button> <button id="logoutButton">Log-out</button>
+    <br>
+    <button id="registerButton">Register</button>
+    <hr>
     <div id = "contactForm">
       <h2>Make a new contact!</h2>
         Name:<input id = "nameInput" type ="text" name="name">
         Phone: <input id = "phoneInput" type = "tel" name= "phone">
         Email:<input id = "emailInput" type= "email" name="email">
         <button id="submitButton" type="submit">Add Contact</button>
+        <hr>
     </div>
     <div id= "contactContainer"></div>
     <script src="bundle.js"></script>

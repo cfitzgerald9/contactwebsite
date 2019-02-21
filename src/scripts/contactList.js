@@ -2,6 +2,7 @@
 import buildSingleContact from "./singleContact"
 import apiManager from "./contactCollection"
 const printAllContacts = () => {
+    document.querySelector("#contactContainer").innerHTML = "";
     apiManager.getAllContacts()
     .then((contacts) => {
         contacts.forEach(singleContact => {
